@@ -1,6 +1,6 @@
-import DetailLink from "./DetailLink";
 import { connectDB } from "/util/database";
 import Link from "next/link";
+
 export default async function List() {
   const db = (await connectDB).db("forum");
   let result = await db.collection("post").find().toArray();
@@ -13,7 +13,6 @@ export default async function List() {
             <Link href={`/detail/${item._id}`}>
               <h4>{item.title}</h4>
             </Link>
-            <DetailLink />
             <p>{item.date}</p>
           </div>
         );
