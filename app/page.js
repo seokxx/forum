@@ -1,9 +1,9 @@
-import { connectDB } from "@/util/database";
+import { connectDB } from "/util/database";
 
 export default async function Home() {
   const client = await connectDB;
   const db = client.db("forum");
-  db.collection("post").find();
-
-  return <div></div>;
+  let result = await db.collection("post").find().toArray();
+  console.log(result);
+  return <div>{result[0].title}</div>;
 }
