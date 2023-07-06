@@ -11,13 +11,21 @@ export default function ListItem(props) {
             </Link>
             <Link href={`/modify/${item._id}`}>수정</Link>
             <button
-              onClick={() => {
+              onClick={(e) => {
                 fetch("/api/post/delete", {
                   method: "POST",
                   body: item._id,
                 })
                   .then((r) => r.json())
-                  .then(() => {});
+                  .then(() => {
+                    e.target.parentElement.style.opacity = 0;
+                    setTimeout(() => {
+                      e.target.parentElement.style.display = "none";
+                    }, 1000);
+                  });
+                // fetch(`/api/post/delete?_id=${item._id}`, {
+                //   method: "GET",
+                // });
               }}
             >
               삭제
