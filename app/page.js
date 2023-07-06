@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export default async function Home() {
+  // await fetch("/", { cache: "force-cache" });
+  // await fetch('/',{cache : 'no-store'})
   return (
     <div className="list-bg">
       <div className="list-item">
