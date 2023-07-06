@@ -1,4 +1,5 @@
 import { connectDB } from "/util/database";
+import { ObjectId } from "mongodb";
 
 export default async function handler(req, res) {
   if (req.method == "POST") {
@@ -9,19 +10,12 @@ export default async function handler(req, res) {
       return res.status(400).json("내용을 입력해주세요.");
     }
 
+    let change = { title: req.body.title, content: req.body.content };
     const db = (await connectDB).db("forum");
-    let date = formatDate(new Date());
-    req.body.date = date;
-    await db.collection("post").insertOne(req.body);
+    await db
+      .collection("post")
+      .updateOne({ _id: new ObjectId(req.body._id) }, { $set: change });
+    console.log(change);
     return res.redirect(302, "/list");
   }
-}
-
-//날짜 함수
-function formatDate(date) {
-  let year = date.getFullYear().toString().substr(-2);
-  let month = (1 + date.getMonth()).toString().padStart(2, "0");
-  let day = date.getDate().toString().padStart(2, "0");
-
-  return `${year}-${month}-${day}`;
 }
