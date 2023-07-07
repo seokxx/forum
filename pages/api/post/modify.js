@@ -15,7 +15,6 @@ export default async function handler(req, res) {
     await db
       .collection("post")
       .updateOne({ _id: new ObjectId(req.body._id) }, { $set: change });
-    console.log(change);
     return res.redirect(302, "/list");
   }
 }

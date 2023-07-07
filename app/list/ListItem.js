@@ -9,6 +9,7 @@ export default function ListItem(props) {
             <Link href={`/detail/${item._id}`}>
               <h4>제목: {item.title}</h4>
             </Link>
+            <p>작성자: {item.author}</p>
             <p>날짜: {item.date}</p>
             <br />
             <Link href={`/modify/${item._id}`}>수정</Link>&nbsp;

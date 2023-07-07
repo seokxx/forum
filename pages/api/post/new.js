@@ -1,6 +1,12 @@
+import { getServerSession } from "next-auth";
 import { connectDB } from "/util/database";
+import { authOptions } from "../auth/[...nextauth]";
 
 export default async function handler(req, res) {
+  let session = await getServerSession(req, res, authOptions);
+  if (session) {
+    req.body.author = session.user.email;
+  }
   if (req.method == "POST") {
     if (req.body.title == "") {
       return res.status(400).json("제목을 입력해주세요.");
