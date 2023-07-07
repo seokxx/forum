@@ -42,6 +42,7 @@ button {
   background: lightgray;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
 } 
 
 .form-div{
@@ -50,6 +51,7 @@ button {
 
 a{
   text-decoration: none;
+  color : black;
 }
 
 .navbar {

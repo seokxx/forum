@@ -7,9 +7,11 @@ export default function ListItem(props) {
         return (
           <div className="list-item" key={index}>
             <Link href={`/detail/${item._id}`}>
-              <h4>{item.title}</h4>
+              <h4>제목: {item.title}</h4>
             </Link>
-            <Link href={`/modify/${item._id}`}>수정</Link>
+            <p>날짜: {item.date}</p>
+            <br />
+            <Link href={`/modify/${item._id}`}>수정</Link>&nbsp;
             <button
               onClick={(e) => {
                 fetch("/api/post/delete", {
