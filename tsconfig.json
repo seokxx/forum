@@ -22,9 +22,17 @@
     "paths": {
       "@/*": ["./*"]
     },
-    "types":["react"],
-    "typeRoots": ["./node_modules/@types"],
+    "types": ["react"],
+    "typeRoots": ["./node_modules/@types"]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/layout.js", "app/page.js", "util/database.js"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "app/layout.js",
+    "app/page.js",
+    "util/database.js"
+  ],
   "exclude": ["node_modules"]
 }
