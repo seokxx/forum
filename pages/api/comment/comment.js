@@ -9,7 +9,7 @@ export default async function handler(req, res) {
   let id = req.body._id.toString();
   console.log(id);
   if (session == null) {
-    return res.redirect(302, `/detail${id}`);
+    return res.redirect(302, `/detail/${id}`);
   } else {
     if (req.method == "POST") {
       let data = {
