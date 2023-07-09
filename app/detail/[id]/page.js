@@ -14,6 +14,7 @@ export default async function Detail(props) {
         <h4>제목: {result.title}</h4>
         <p>내용: {result.content}</p>
         <br></br>
+        <p>---댓글---</p>
         <Comment _id={result._id.toString()} reply={reply} />
       </div>
     </div>

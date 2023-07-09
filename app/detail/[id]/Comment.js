@@ -11,8 +11,9 @@ export default function Comment({ _id, reply }) {
       {reply.map((item, index) => {
         return (
           <div key={index}>
+            내용: {item.content} <br></br>
             작성자: {item.author}
-            내용: {item.content}
+            <hr></hr>
           </div>
         );
       })}
