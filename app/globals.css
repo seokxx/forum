@@ -13,7 +13,7 @@ body {
   padding: 20px;
   margin-bottom: 5px;
   box-shadow: rgb(224, 224, 224) 0px 2px 4px 0px;
-  opacity : 1;
+  opacity: 1;
   transition: all 1s;
 }
 
@@ -43,15 +43,15 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-} 
+}
 
-.form-div{
+.form-div {
   margin-top: 10px;
 }
 
-a{
+a {
   text-decoration: none;
-  color : black;
+  color: black;
 }
 
 .navbar {
@@ -65,4 +65,16 @@ a{
 }
 .logo {
   font-weight: bold;
-} 
+}
+
+.dark-mode .navbar {
+  background: #222;
+}
+
+.dark-mode .navbar a {
+  color: white;
+}
+
+.dark-mode .navbar p {
+  color: white;
+}

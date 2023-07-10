@@ -15,14 +15,16 @@ export default function LoginBtn({ session }) {
         </button>
       ) : (
         <div>
-          {session.user.name}&nbsp;
-          <button
-            onClick={() => {
-              signOut();
-            }}
-          >
-            logOut
-          </button>
+          <p>
+            {session.user.name} &nbsp;
+            <button
+              onClick={() => {
+                signOut();
+              }}
+            >
+              logOut
+            </button>
+          </p>
         </div>
       )}
     </div>
