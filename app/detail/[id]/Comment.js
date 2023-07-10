@@ -4,11 +4,17 @@ import { useState } from "react";
 
 export default function Comment({ _id, reply }) {
   let [comment, setComment] = useState();
+  console.log(_id, reply);
 
-  console.log({ reply });
+  // 해당 게시물의 댓글만 걸러내기 위한 함수
+  const filterReplies = (replies) => {
+    return replies.filter((reply) => reply.parentId === _id);
+  };
+
+  const filteredReplies = filterReplies(reply);
   return (
     <div>
-      {reply.map((item, index) => {
+      {filteredReplies.map((item, index) => {
         return (
           <div key={index}>
             내용: {item.content} <br></br>
